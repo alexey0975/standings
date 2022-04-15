@@ -1,0 +1,77 @@
+@import '../shared/variables';
+
+.table {
+  position: relative;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+
+  &__header {
+    background-color: $thrid-color;
+  }
+
+  &__cell {
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid $main-color;
+  }
+
+  &__cell-descr {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    &__header {
+      display: none;
+    }
+
+    &__row {
+      display: block;
+    }
+
+    &__cell {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+
+      &:first-child {
+        background-color: #6071e0;
+      }
+      &-descr {
+        display: block;
+        flex: 0 0 150px;
+        padding: 5px 0;
+        padding-right: 10px;
+        font-weight: bold;
+      }
+
+      &-value {
+        padding: 5px 0;
+        padding-left: 10px;
+        border-left: 1px solid $main-color;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 576px) {
+  .table {
+    &__cell {
+      font-size: 14px;
+
+      &-descr {
+        flex: 0 0 130px;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 320px) {
+  .table__cell {
+    font-size: 12px;
+  }
+}

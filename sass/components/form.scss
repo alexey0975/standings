@@ -1,0 +1,43 @@
+@import '../shared/variables';
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: $form-background;
+  padding: 20px;
+  border-radius: 15px;
+
+  &__title {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__field {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__submit {
+    align-self: flex-end;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid $form-style-color;
+    border-radius: 5px;
+    background-color: inherit;
+    color: $form-style-color;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 300ms linear;
+
+    &:hover {
+      background-color: $form-style-color;
+      color: $second-color;
+    }
+  }
+}

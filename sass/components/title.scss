@@ -1,0 +1,28 @@
+@import '../shared/variables';
+
+.title {
+  font-size: $title-size;
+  font-weight: bold;
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &_table {
+    font-style: italic;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    &_table {
+      text-align: left;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

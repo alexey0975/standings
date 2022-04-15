@@ -1,0 +1,17 @@
+@import '../shared/variables';
+
+.winner {
+  font-weight: 500;
+
+  &_first {
+    background-color: $first-win;
+  }
+
+  &_second {
+    background-color: $second-win;
+  }
+
+  &_thrid {
+    background-color: $thrid-win;
+  }
+}

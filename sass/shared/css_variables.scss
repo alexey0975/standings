@@ -1,0 +1,9 @@
+:root {
+  --title-size: 32px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --title-size: 24px;
+  }
+}
