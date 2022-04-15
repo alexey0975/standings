@@ -60,7 +60,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/src/post_processing.php';
       } ?>
       <tr class="table__row table__row_data">
         <td class="table__cell">
-          <span class="table__cell-descr">Фаимилия И.О.</span>
+          <span class="table__cell-descr">Фамилия И.О.</span>
           <span class="table__cell-value"><?= $car['name'] ?></span>
         </td>
         <td class="table__cell">
