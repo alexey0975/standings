@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/src/post_processing.php';
 ?>
 
-<form class="js-filter form" action="/" method="POST">
+<form class="js-filter form" action="/" method="GET">
   <h2 class="form__title">Результаты: </h2>
   <div class="form__inner">
     <label class="radio form__field">

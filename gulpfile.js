@@ -3,8 +3,17 @@ const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
 const sourceMaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
+const ts = require('gulp-typescript');
+const tsProject = ts.createProject('tsconfig.json');
+
 
 const localhost = 'startmedia'; // нужно использовать название локального домена
+
+const typeScripts = () => {
+  return src('ts/**/*.ts')
+    .pipe(tsProject())
+    .js.pipe(dest('js'));
+}
 
 const stylesDev = () => {
   return src('sass/style.scss')
@@ -49,8 +58,8 @@ const watcherPhp = () => {
     .pipe(browserSync.stream());
 }
 
-const watcherJs = () => {
-  return src('js/**/*.js')
+const watcherTs = () => {
+  return src('ts/**/*.ts')
     .pipe(browserSync.stream());
 }
 
@@ -62,8 +71,8 @@ const watchFiles = () => {
 
 watch('sass/**/*.scss', stylesDev);
 watch('**/*.php', watcherPhp);
-watch('js/**/*.js', watcherJs);
+watch('ts/**/*.ts', watcherTs);
 
 
-exports.default = styles;
-exports.dev = series(stylesDev, watchFiles);
+exports.default = series(styles, typeScripts);
+exports.dev = series(stylesDev, typeScripts, watchFiles);

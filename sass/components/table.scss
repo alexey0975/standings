@@ -34,23 +34,19 @@
     &__cell {
       display: flex;
       align-items: center;
-      padding: 0 10px;
+      padding: 0px 10px;
 
       &:first-child {
         background-color: #6071e0;
       }
-      &-descr {
-        display: block;
-        flex: 0 0 150px;
-        padding: 5px 0;
-        padding-right: 10px;
-        font-weight: bold;
-      }
 
-      &-value {
+      &::before {
+        flex: 0 0 30%;
         padding: 5px 0;
-        padding-left: 10px;
-        border-left: 1px solid $main-color;
+        margin-right: 5px;
+        border-right: 1px solid $main-color;
+        font-weight: bold;
+        content: attr(data-heading);
       }
     }
 

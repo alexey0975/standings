@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/src/core.php';
 
-$race = !$_POST || !$_POST['race'] ? '' : $_POST['race'];
+$race = $_GET['race'] ?? '';
 
 if (!$race || $race === 'all') {
   $choice = 'all';

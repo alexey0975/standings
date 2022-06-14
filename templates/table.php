@@ -59,43 +59,35 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/src/post_processing.php';
           $winClass = '';
       } ?>
       <tr class="table__row table__row_data">
-        <td class="table__cell">
-          <span class="table__cell-descr">Фамилия И.О.</span>
-          <span class="table__cell-value"><?= $car['name'] ?></span>
+        <td class="table__cell" data-heading="Фамилия И.О.">
+          <?= $car['name'] ?>
         </td>
-        <td class="table__cell">
-          <span class="table__cell-descr">Город</span>
-          <span class="table__cell-value"><?= $car['city'] ?></span>
+        <td class="table__cell" data-heading="Город">
+          <?= $car['city'] ?>
         </td>
-        <td class="table__cell">
-          <span class="table__cell-descr">Автомобиль</span>
-          <span class="table__cell-value"><?= $car['car'] ?></span>
+        <td class="table__cell" data-heading="Автомобиль">
+          <?= $car['car'] ?>
         </td>
 
         <?php if ($choice === 'all') {
           foreach ($car['results'] as $key => $result) { ?>
-
-            <td class="table__cell">
-              <span class="table__cell-descr"><?= $key + 1 ?>-заезд</span>
-              <span class="table__cell-value"><?= $result ?></span>
+            <td class="table__cell" data-heading="<?= $key + 1 ?>-заезд">
+              <?= $result ?>
             </td>
           <?php } ?>
 
-          <td class="table__cell">
-            <span class="table__cell-descr">Всего очков</span>
-            <span class="table__cell-value"><?= $car['total_score'] ?></span>
+          <td class="table__cell" data-heading="Всего очков">
+            <?= $car['total_score'] ?>
           </td>
 
         <?php } else { ?>
-          <td class="table__cell">
-            <span class="table__cell-descr">Результат</span>
-            <span class="table__cell-value"><?= $car['results'][$choice - 1] ?></span>
+          <td class="table__cell" data-heading="Результат">
+            <?= $car['results'][(int)$choice - 1] ?>
           </td>
         <?php } ?>
 
-        <td class="table__cell <?= $winClass ?>">
-          <span class="table__cell-descr">Место</span>
-          <span class="table__cell-value"><?= $rating ?></span>
+        <td class="table__cell <?= $winClass ?>" data-heading="Место">
+          <?= $rating ?>
         </td>
       </tr>
     <?php } ?>
